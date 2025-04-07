@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-accent text-dark scroll-smooth;
+  }
+
+  body {
+    @apply font-sans antialiased min-h-screen;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-bold tracking-wide;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  /* Improve mobile tap targets */
+  button,
+  a {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center tracking-wide;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 font-semibold;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary/10 shadow-lg shadow-primary/10 font-semibold;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .card {
+    @apply bg-white rounded-xl p-6 shadow-xl border border-secondary/10;
+  }
+
+  .ice-shadow {
+    @apply shadow-lg shadow-secondary/20;
+  }
+
+  .frost-border {
+    @apply border border-secondary/20;
+  }
+
+  .wolf-card {
+    @apply bg-white p-6 rounded-xl shadow-xl border border-secondary/10;
+  }
+
+  .snow-bg {
+    @apply relative bg-accent;
+  }
+
+  .snow-bg::before {
+    @apply content-[''] absolute inset-0 bg-snow-pattern opacity-40 pointer-events-none;
+  }
+
+  /* Mobile responsive improvements */
+  .mobile-container {
+    @apply px-4 sm:px-6 w-full;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text;
+  }
+
+  /* Improved card that looks good on mobile */
+  .responsive-card {
+    @apply bg-white rounded-xl p-5 sm:p-6 shadow-xl border border-secondary/10 w-full max-w-full overflow-hidden;
+  }
+}
+
+/* Montserrat optimizations */
+.logo-text {
+  @apply font-extrabold tracking-widest;
+  letter-spacing: 0.1em;
+}
+
+/* Improve font weight rendering for Montserrat */
+.text-balance {
+  text-wrap: balance;
+}
